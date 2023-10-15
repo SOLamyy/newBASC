@@ -1,0 +1,373 @@
+.container {
+  max-width: 600px  !important; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+input[type="text"] {
+  padding: 8px;
+  margin-top: 50px;
+  width: 300px;
+}
+
+button {
+  padding: 8px 16px;
+  margin-top: 10px;
+}
+
+.image-container {
+  position: relative; /* Add this line to make the container a positioned element */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gmcup-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-37%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+  border: none; /* Remove the border */
+}
+
+/* Phone Styles */
+@media screen and (max-width: 767px) {
+  .image-container {
+    flex-direction: row; /* Change flex-direction to display elements in a row on phone layout */
+  }
+
+  .image-container img {
+    margin-bottom: 0; /* Remove the margin-bottom to align elements horizontally */
+  }
+
+  .gmcup-overlay {
+    width: 40%; /* Adjust the width as per your requirement */
+    height: 40%; /* Adjust the height as per your requirement */
+  }
+}
+.dropdown-container {
+  margin-top: 10px;
+}
+
+#gmcup-dropdown {
+  padding: 8px;
+  width: 300px;
+}
+#shot-dropdown{
+  padding: 8px;
+  width: 300px;
+}
+#bottle-dropdown{
+  padding: 8px;
+  width: 300px;
+}
+/* CSS styles for shot overlay */
+.shot-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(10%);
+  transform: translateY(-35.5%);
+  width: 23%;
+  height: auto;
+  max-width: 50%; /* Adjust the maximum width as needed */
+  max-height: 50%; /* Adjust the maximum height as needed */
+  z-index: 2;
+  border: none;
+}
+.bottle-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(10%);
+  transform: translateY(-35.5%);
+  width: 23%;
+  height: auto;
+  max-width: 30%; /* Adjust the maximum width as needed */
+  max-height: 30%; /* Adjust the maximum height as needed */
+  z-index: 2;
+  border: none;
+}
+
+/* CSS for GM Cup layer */
+.gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+
+/* CSS for Shot layer */
+.shot-layer {
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.noise-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.noise-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.cheetah-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.cheetah-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.robot-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.robot-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.trippy-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.trippy-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.dmt-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.dmt-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.death-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.death-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.zombie-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.zombie-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.white-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.white-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+.brown-gm-cup-layer {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-20%);
+  transform: translateY(-36%);
+  width: 40%; /* Adjust the width as per your requirement */
+  height: 40%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.brown-shot-layer{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-32%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}
+
+.brown-beer-layer {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  transform: translateX(-50%);
+  transform: translateY(-34%);
+  width: 25%; 
+  height: 25%
+  z-index: 2; 
+} 
+
+.pizza {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  transform: translateX(-50%);
+  transform: translateY(-37%);
+  width: 30%; /* Adjust the width as per your requirement */
+  height: 30%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the cup is above the NFT image */
+}
+.ledger{
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateX(100%);
+  transform: translateY(-45%);
+  width: 25%; /* Adjust the width as per your requirement */
+  height: 25%; /* Adjust the height as per your requirement */
+  z-index: 2; /* Ensure the shot is above the NFT image */
+}

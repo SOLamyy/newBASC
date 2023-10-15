@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+
+
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  --col-gap: 2rem;
+  --row-gap: 2rem;
+  --line-w: 0.25rem;
+  display: grid;
+  grid-template-columns: var(--line-w) 1fr;
+  grid-auto-columns: max-content;
+  column-gap: var(--col-gap);
+  list-style: none;
+  width: min(60rem, 90%);
+  margin-inline: auto;
+}
+
+/* line */
+ul::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  background: rgb(225, 225, 225);
+  border-radius: calc(var(--line-w) / 2);
+}
+
+/* columns*/
+
+/* row gaps */
+ul li:not(:last-child) {
+  margin-bottom: var(--row-gap);
+}
+
+/* card */
+ul li {
+  grid-column: 2;
+  --inlineP: 1.5rem;
+  margin-inline: var(--inlineP);
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+}
+
+/* date */
+ul li .date {
+  --dateH: 3rem;
+  height: var(--dateH);
+  margin-inline: calc(var(--inlineP) * -1);
+
+  text-align: center;
+  background-color: var(--accent-color);
+
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  display: grid;
+  place-content: center;
+  position: relative;
+
+  border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+
+/* date flap */
+ul li .date::before {
+  content: "";
+  width: var(--inlineP);
+  aspect-ratio: 1;
+  background: var(--accent-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  position: absolute;
+  top: 100%;
+
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  right: 0;
+}
+
+/* circle */
+ul li .date::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: var(--bgColor);
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+
+  transform: translate(50%, -50%);
+  right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+/* title descr */
+ul li .title,
+ul li .descr {
+  background: var(--bgColor);
+  position: relative;
+  padding-inline: 1.5rem;
+}
+ul li .title {
+  overflow: hidden;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  font-weight: 500;
+}
+ul li .descr {
+  padding-block-end: 1.5rem;
+  font-weight: 300;
+}
+
+/* shadows */
+ul li .title::before,
+ul li .descr::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(4px);
+  transform: translate(-50%, 50%);
+}
+ul li .title::before {
+  bottom: calc(100% + 0.125rem);
+}
+
+ul li .descr::before {
+  z-index: -1;
+  bottom: 0.25rem;
+}
+
+@media (min-width: 40rem) {
+  ul {
+    grid-template-columns: 1fr var(--line-w) 1fr;
+  }
+  ul::before {
+    grid-column: 2;
+  }
+  ul li:nth-child(odd) {
+    grid-column: 1;
+  }
+  ul li:nth-child(even) {
+    grid-column: 3;
+  }
+
+  /* start second card */
+  ul li:nth-child(2) {
+    grid-row: 2/4;
+  }
+
+  ul li:nth-child(odd) .date::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
+  }
+
+  ul li:nth-child(odd) .date::after {
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  ul li:nth-child(odd) .date {
+    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+  }
+}
+
+.credits {
+  margin-top: 1rem;
+  text-align: right;
+}
+.credits a {
+  color: var(--color);
+}
+
+    </style>
+    <meta charset="utf-8">
+    <title>BASC - Our Story</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="icon" href="img/logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+
+    <div class="container-fluid bg-dark text-light px-0 py-2">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href="https://www.facebook.com/BoredApeSolanaClub/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="https://twitter.com/BoredApeSolClub"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="https://discord.com/invite/bascdao"><i class="fab fa-discord"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.instagram.com/boredape_solclub/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto p-4 p-lg-0">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <a href="roadmap.html" class="nav-item nav-link">Our Story</a>
+              <a href="team.html" class="nav-item nav-link">Our Team</a>
+              <a href="dao.html" class="nav-item nav-link">The DAOS</a>
+              <a href="https://bascmerch.shop/" class="nav-item nav-link">Shop</a>
+          </div>
+      </div>
+    </nav>
+
+    <h1>Roadmap</h1>
+    <ul>
+        <li style="--accent-color:#41516C">
+            <div class="date">Jan.4, 2022</div>
+            <div class="title">Mint Day</div>
+            <div class="descr">On January 4th, Bored Ape Solana Club (BASC) launched a stealth mint held on launchmynft.com. A stealth mint meant that there was zero marketing or advertising dollars invested into the project. After almost a full 2 week mint process, FOMO kicked in as all 6001 NFT's were minted on the Solana blockchain for .69 SOL (roughly $80 at the time).</div>
+        </li>
+        <li style="--accent-color:#FBCA3E">
+            <div class="date">Jan.13, 2022
+            </div>
+            <div class="title">The Launch</div>
+            <div class="descr">Mint was complete and an announcement was made in the discord that the project was listed live on Magic Eden. The entire community erupted with excitement because there had been so much debate on if the project would actually get verified and approved.
+
+            </div>
+        </li>
+        <li style="--accent-color:#E24A68">
+            <div class="date">Jan.21, 2022
+</div>
+            <div class="title">Derivative Badge</div>
+            <div class="descr">With all the uproar BASC had caused the Solana community, Magic Eden felt the need to make a decision to remove Bored Ape Solana Club from their front page for 48 hours. After lots of internal debate, Magic Eden’s resolution was to invent the “derivative badge”. BASC was labeled the first derivative NFT project.
+            </div>
+        </li>
+        <li style="--accent-color:#1B5F8C">
+            <div class="date">Mar.21, 2022</div>
+            <div class="title">The Collapse</div>
+            <div class="descr">Bored Dragon listed his BASC PFP. After listing, he went inside the new BASC discord and said, “this was always my dream”, then deleted the original discord (which now had reached 15k members) and the Twitter account before disappearing. Rugged!
+
+            </div>
+        </li>
+        <li style="--accent-color:#4CADAD">
+            <div class="date">Mar.25, 2022
+
+            </div>
+            <div class="title">The Derug Process</div>
+            <div class="descr">The proposal from DakDaze, Exxempt, & Kitsune required the community to raise 100 SOL to remint out the entire 6001 BASC NFT's and airdrop to holders. Within 12 hours the community came together and donated the 100 SOL. The team reminted and relisted on Magic Eden.
+
+            </div>
+        </li>
+        <li style="--accent-color:#41516C">
+            <div class="date">April.1, 2022
+
+
+            </div>
+            <div class="title">The Rebirth</div>
+            <div class="descr">Kitsune revamped the entire BASC collection by hand drawing the entire collection trait by trait. With the help of the Head Developer Exxempt, all traits were combined into 900px & 300dpi quality update was applied and the new artwork was well received by the community!
+
+
+
+            </div>
+        </li>
+        <li style="--accent-color:#FBCA3E">
+            <div class="date">April.22, 2022
+
+
+            </div>
+            <div class="title">The Sail to OpenSea</div>
+            <div class="descr">Bored Ape Solana Club was approved on OpenSea for launch! The project is now a verified collection on OpenSea.
+
+            </div>
+        </li>
+        <li style="--accent-color:#E24A68">
+            <div class="date">May.17, 2022
+
+
+            </div>
+            <div class="title">Website and Merch</div>
+            <div class="descr">Bored Ape Solana Club released their updated website: https://www.bascdao.net/ and Community member "Millz" stepped in to rebrand and launch the 1st BASC merch collection
+
+            </div>
+        </li>
+        <li style="--accent-color:#41516C">
+            <div class="date">Until Present
+
+            </div>
+            <div class="title">Building</div>
+            <div class="descr">Speak at FX Summit 2022 Conference</br>
+                 Official Partnership Chart Addicts</br>
+                 Launch daily utility giveaways</br>
+                Official partnership with TTI Academy</br>
+                Purchase Blue chip NFTs for the DAO</br>
+                 Launch of BASC Foundation</br>
+                 Rebuilt a school in Nigeria</br>
+                 Built a neighborhood basketball court in the Philippines</br>
+                 Derug and saved several solana communities</br>
+                 Launch Collab NFT collections and airdrop to the community</br>
+                 Switch to pNFT enforced royalties</br>
+                 Launch Staking Vault</br>
+                 Launch the Noise DAO</br>
+                 Launch the Zombie DAO</br>
+                 Launch the Jungle DAO</br>
+                 Launch the Robo DAO</br>
+                 Launch the Suits DAO</br>
+                 New Website</br>
+                 Speak at FX Summit 2023!</br>
+                 Explore the metaverse</br>
+                 Minted 999 OG passes</br>
+
+            </div>
+        </li>
+        <li style="--accent-color:#FBCA3E">
+            <div class="date">Coming Soon
+
+            </div>
+            <div class="title">More Building</div>
+            <div class="descr">Launch BASC NFT's v2 </br>
+                Speak at FX Summit 2024!</br>
+                Hunt for lifetime private resort</br>
+                Host in real life events</br>
+                Further Partnerships for even further utility</br>
+
+            </div>
+        </li>
+    </ul>
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Bored Ape Solana Club</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Designed By <a class="border-bottom" href="https://twitter.com/solamyy?lang=en">SOLamy</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 px-5 text-center d-flex justify-content-center align-items-center">
+            <div class="h-100 d-inline-flex align-items-center mx-n2">
+                <span>Follow Us:</span>
+                <a class="btn btn-link text-light" href="https://www.facebook.com/BoredApeSolanaClub/"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-link text-light" href="https://twitter.com/BoredApeSolClub"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-link text-light" href="https://discord.com/invite/bascdao"><i class="fab fa-discord"></i></a>
+                <a class="btn btn-link text-light" href="https://www.instagram.com/boredape_solclub/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
